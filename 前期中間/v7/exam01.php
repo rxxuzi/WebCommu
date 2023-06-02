@@ -1,8 +1,8 @@
 <html>
-    <head>exam01.php</head>
+    <head>応用課題</head>
     <body>
         <?php
-            echo "演習課題<br />\n";
+            echo "応用課題<br />\n";
             $line = 1;//行数カウンター
             //ファイル名
             $filePath = "./v7/member.txt";
