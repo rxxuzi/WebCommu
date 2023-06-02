@@ -36,6 +36,7 @@
             for($i = 0; $i < $counter; $i++){
                 //行を配列化
                 $words = explode(",",$memberArray[$i]);
+                //所有格を代入
                 $sex = str_replace("F","Her",$words[1]);
                 $sex = str_replace("M","His",$sex);
                 $sex = str_replace("-","Their",$sex);
