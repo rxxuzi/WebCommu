@@ -6,8 +6,6 @@
 git clone https://github.com/rxxuzi/WebCommu/
 cd WebCommu/H1/
 bash check.sh
-g++ g++ Exist.cpp -o Exist
-.\Exist
 ~~~
 
 今までの授業まとめ
