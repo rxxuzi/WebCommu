@@ -1,28 +1,22 @@
-//display "Hello World" 10times
-#include <iostream>
-#include <fstream>
 #include <iostream>
 #include <vector>
-#include <filesystem>
-
-bool file_exists(const std::string & filename) {
-    std::ifstream ifs(filename);
-    return ifs.is_open();
-}
+#include <string>
+#include <sys/stat.h>
 
 int main() {
-    //Hello World
     std::cout << "Hello World!" << std::endl;
     std::vector<std::string> folderNames = {"exp", "v5", "v6", "v7"};
-    std::string dirPath = "H1/";
+    std::string dirPath = "./";
+    int counter = 0;
     for (const auto& folderName : folderNames) {
-        if (std::filesystem::exists(dirPath + folderName)) {
-            std::cout << folderName << " exists." << std::endl;
+        struct stat buffer;
+        if (stat((dirPath + folderName).c_str(), &buffer) == 0) {
+            std::cout << (dirPath + folderName).c_str() << " exists." << std::endl;
         } else {
-            std::cout << folderName << " does not exist." << std::endl;
+            std::cout << (dirPath + folderName).c_str() << " does not exist." << std::endl;
         }
+        counter ++;
     }
+    std::cout << "Total folders: " << counter << std::endl;
     return 0;
 }
-
-
