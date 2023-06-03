@@ -18,6 +18,7 @@ bash check.sh
 [テスト対策ノート](exp/)
 
 ディレクトリの削除方法
+`Webbcommu`の前の親ディレクトリに戻って次のコマンド
 
 ~~~shell
 rm -rf WebCommu/
