@@ -3,7 +3,7 @@
 ~~~shell
 git clone https://github.com/rxxuzi/WebCommu/
 cd WebCommu/H1/
-check.sh
+bash check.sh
 ~~~
 
 [第5回授業](v5/)
