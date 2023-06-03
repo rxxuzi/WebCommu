@@ -1,5 +1,7 @@
 # 前期中間のまとめ
 
+ディレクトリのダウンロード方法
+
 ~~~shell
 git clone https://github.com/rxxuzi/WebCommu/
 cd WebCommu/H1/
@@ -15,3 +17,8 @@ bash check.sh
 テスト対策用ディレクトリ。今まで出てきた関数の復習用
 [テスト対策ノート](exp/)
 
+ディレクトリの削除方法
+
+~~~shell
+rm -rf WebCommu/
+~~~
