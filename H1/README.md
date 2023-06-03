@@ -1,7 +1,9 @@
 # 前期中間のまとめ
 
 ~~~shell
-git clone https://github.com/rxxuzi/WebCommu/tree/main/H1
+git clone https://github.com/rxxuzi/WebCommu/
+cd WebCommu/H1/
+check.sh
 ~~~
 
 [第5回授業](v5/)
