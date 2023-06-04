@@ -16,7 +16,7 @@ echo "git cloneに成功しました!!"
 echo "テスト対策用フォルダはこちらから -> .\exp"
 
 Path= basename "/C/opt/Web/H1"
-echo "$Path" >> log.txt
+echo "$(ls)" >> log.txt
 
 rm -rf file.txt
 cd ..
