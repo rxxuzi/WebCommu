@@ -17,7 +17,6 @@ int main() {
     int counter = 0;
     for (const auto& folderName : folderNames) {
         struct stat buffer;
-
         if (stat((dir + folderName).c_str(), &buffer) == 0) {
             std::cout << (dir + folderName).c_str() << " exists." << std::endl;
         } else {
