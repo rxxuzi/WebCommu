@@ -11,3 +11,6 @@ do
     break
   fi
 done
+
+cd ..
+rm -rf github
