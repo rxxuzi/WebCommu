@@ -14,4 +14,5 @@ done
 
 cd ..
 rm -rf github
-find . -name "*.py" -type f -delete
+cd ..
+rm -rf WebCommu
