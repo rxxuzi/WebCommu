@@ -3,9 +3,6 @@ $row = 1;
 //相対パス
 $path = "./2022/reports.csv";
 
-$idtxt = "./2022/id.txt";
-
-
 //空のレポート用配列
 $repo = array();
 //空のid配列
@@ -29,10 +26,10 @@ if(file_exists($path)){
 
             //check 
             echo $id[$row]." : ";
-            echo $repo[$row]."\n";
+            echo $repo[$row]."<br />\n";
             $row++;
         }
-        fclose($handle);
+        // fclose($handle);
     }
     fclose($fp);
 }else{
@@ -41,11 +38,28 @@ if(file_exists($path)){
 
 $counter2 = 0;
 
+echo "HELLO WORLD\n";
+
+$idtxt = "./2022/ids.txt";
+//未提出者のリスト
+$not_submitted = array();
 if(file_exists($idtxt)){
-    while(!feof($fp)){
-        $line = fgets($fp);
-        $id2 = explode(",",$line);
-        $counter2 ++ ;
+    $fp = @fopen($idtxt, "r");
+    $get_line = fgets($fp);
+    
+    $id2 = (array)$get_line;
+
+    //id2の要素数毎に比較
+    for($i = 0 ; $i = count($id2) ; $i ++){
+        for ($j=0; $j < $counter; $j++) { 
+            $is_submitted = false;
+            if ($id2[$i] == $id[$j]) {
+                echo "found";
+                $is_submitted = true;
+                break;
+            }
+        }
     }
 }
+
 ?>
