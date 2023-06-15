@@ -66,13 +66,14 @@ if(file_exists($idtxt)){
             if($id2[$i] == $id[$j]){
                 $is_submitted = true;
                 // echo $id[$j]."\n";
-                $tmp = $id[$j];
+                $tmp = $repo[$j];
                 break;
             }
         }
 
         //提出状況をチェック
         if(!$is_submitted){
+            // 一応配列に名前を代入
             $not_submitted[$counter2] = $id2[$i];
             echo "not submitted <br />\n";
         }else{
