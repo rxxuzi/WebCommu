@@ -21,7 +21,7 @@
                     // echo $counter . " : " . $line."<br />\n";
 
                     //配列化
-                    $words  = explode(",",$aline);
+                    // $words  = explode(",",$aline);
                     
                     $memberArray[$counter] = $line;
 
