@@ -12,7 +12,7 @@
         <p id = "str0">Hello World!!</p>
         <!-- HEADER -->
         <div id="header">
-            <p id="name">ID [header]</p>
+            <p id="name">Name</p>
         </div>
 
 
@@ -20,18 +20,28 @@
             
             <p>ID menu Space</p>
             
-            <p class="menu_item">Menu 1</p>
-            <p class="menu_item">Menu 2</p>
-            <p class="menu_item">Menu 3</p>
-            <p class="menu_item">Menu 4</p>
-            <p class="menu_item">Menu 5</p>
+            <p class="menu_item" id="menu-1">Menu 1</p>
+            <p class="menu_item" id="menu-2">Menu 2</p>
+            <p class="menu_item" id="menu-3">Menu 3</p>
+            <p class="menu_item" id="menu-4">Menu 4</p>
+            <p class="menu_item" id="menu-5">Menu 5</p>
         </div>
 
         <!-- input name tag -->
         <div id = "main">
-            <p>input -> 
-                <input type="text" id="textbox" name="input_box">
-                <input type="button" id="check" name="check" onclick="saveText()"></p>
+            <p>input Name -> 
+                <input type="text" id="user-name" name="input_box">
+                <button type="button" id="check" name="check" onclick="saveText() "style="width: 100px; height: 30px;">SAVE</button>
+            </p>
+
+            <p>input ID ->
+                <input type="number" id="user-id" >
+                <button type="button" id="check" name="check" onclick="saveId() "style="width: 100px; height: 30px;">SAVE</button>
+            </p>
+
+            <p>Sub ->
+                <input type="range" id="slider" min="0" max="100" oninput="ls()">
+            </p>
         </div>
     </body>
 </html>

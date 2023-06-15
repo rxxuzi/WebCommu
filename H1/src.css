@@ -1,7 +1,7 @@
 /* index.html */
 
+/* id menu に対して装飾 */
 #menu {
-    /*�Z���N�^��ID���w�肷��Ƃ��͓���#������*/
     width:  200px;
     background-color: #00ff00;
     float: left;
@@ -9,6 +9,8 @@
 
 #header { 
     background-color: yellow;
+    font: bold;
+    font-size: 50;
 }
 
 #main {
