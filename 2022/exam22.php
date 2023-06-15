@@ -18,15 +18,15 @@ if(file_exists($path)){
     if (($handle = $fp) !== FALSE) {
     // 1行ずつfgetcsv()関数を使って読み込む
         while (($data = fgetcsv($handle))) {
-            echo $row."行目";
+            // echo $row."行目";
             //listにdataを配列化して代入
             $list = (array)$data;
             $id[$row] = $list[0];
             $repo[$row] = $list[1];
 
             //check 
-            echo $id[$row]." : ";
-            echo $repo[$row]."<br />\n";
+            // echo $id[$row]." : ";
+            // echo $repo[$row]."<br />\n";
             $row++;
         }
         // fclose($handle);
@@ -53,17 +53,26 @@ if(file_exists($idtxt)){
     $index =  count($id2);
 
     for($i = 0; $i < $index; $i++){
+
+        echo $id2[$i].": ";
+
         $is_submitted = false;
+
+        $tmp = "tmp";
+        
         for($j = 1; $j < $row; $j++){
             if($id2[$i] == $id[$j]){
                 $is_submitted = true;
                 // echo $id[$j]."\n";
+                $tmp = $id[$j];
                 break;
             }
         }
         if(!$is_submitted){
             $not_submitted[$counter2] = $id2[$i];
-            echo $not_submitted[$counter2]."\n";
+            echo "not submitted <br />\n";
+        }else{
+            echo "submitted : ".$tmp."<br />\n";
         }
     }
 }
