@@ -47,19 +47,11 @@ if(file_exists($idtxt)){
     $fp = @fopen($idtxt, "r");
     $get_line = fgets($fp);
     
-    $id2 = (array)$get_line;
+    $id2 = expplode(" ", $get_line);
 
     //id2の要素数毎に比較
-    for($i = 0 ; $i = count($id2) ; $i ++){
-        for ($j=0; $j < $counter; $j++) { 
-            $is_submitted = false;
-            if ($id2[$i] == $id[$j]) {
-                echo "found";
-                $is_submitted = true;
-                break;
-            }
-        }
-    }
+    $index =  count($id2);
+    echo $index;
 }
 
 ?>
