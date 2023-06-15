@@ -1,11 +1,37 @@
-<html>
+<html lang = "ja">
     <head>
-        <title>Hello World</title>
+        <title>Example HTML</title>
+        <link href="./src.css" rel="stylesheet" type="text/css">
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        
     </head>
     <body>
+        <script src='z.js'></script>
         <p id = "str0">Hello World!!</p>
-        <td>
-        </td>
-        <figure><embed src="https://wakatime.com/share/@rxxuzi/b39e7f9a-5771-4cd3-9f00-efc872c27dd5.svg"></embed></figure>
+        <!-- HEADER -->
+        <div id="header">
+            <p id="name">ID [header]</p>
+        </div>
+
+
+        <div id="menu">
+            
+            <p>ID menu Space</p>
+            
+            <p class="menu_item">Menu 1</p>
+            <p class="menu_item">Menu 2</p>
+            <p class="menu_item">Menu 3</p>
+            <p class="menu_item">Menu 4</p>
+            <p class="menu_item">Menu 5</p>
+        </div>
+
+        <!-- input name tag -->
+        <div id = "main">
+            <p>input -> 
+                <input type="text" id="textbox" name="input_box">
+                <input type="button" id="check" name="check" onclick="saveText()"></p>
+        </div>
     </body>
 </html>

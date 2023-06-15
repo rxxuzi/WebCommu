@@ -1,1 +1,29 @@
 /* index.html */
+
+#menu {
+    /*�Z���N�^��ID���w�肷��Ƃ��͓���#������*/
+    width:  200px;
+    background-color: #00ff00;
+    float: left;
+}
+
+#header { 
+    background-color: yellow;
+}
+
+#main {
+    background-color: #59d9d9;
+    color: rgb(206, 113, 32);
+    font-size: 20;
+    text-decoration: dashed;
+}
+
+.menu_item{ 
+    width: 150px;
+    background-color: #ffffff;
+    color:black;
+}
+
+#check{
+    color: rebeccapurple;
+}
