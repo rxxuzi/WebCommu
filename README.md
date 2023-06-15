@@ -40,6 +40,6 @@ bash cru.sh
 
 ## 参考
 
-> https://www.php.net/manual/ja/tutorial.php
-> https://www.tohoho-web.com/php/about.html
-> http://www.standpower.com/php_basis.html
+> <https://www.php.net/manual/ja/tutorial.php>
+> <https://www.tohoho-web.com/php/about.html>
+> <http://www.standpower.com/php_basis.html>
