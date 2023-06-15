@@ -2,6 +2,7 @@
 $row = 1;
 //相対パス
 $path = "./2022/reports.csv";
+$idtxt = "./2022/ids.txt";
 
 //空のレポート用配列
 $repo = array();
@@ -37,16 +38,14 @@ if(file_exists($path)){
 }
 
 $counter2 = 0;
-
-echo "HELLO WORLD\n";
-
-$idtxt = "./2022/ids.txt";
 //未提出者のリスト
 $not_submitted = array();
 if(file_exists($idtxt)){
+    //filepointer
     $fp = @fopen($idtxt, "r");
+
     $get_line = fgets($fp);
-    
+    //txtファイルを配列化s
     $id2 = explode(",", $get_line);
 
     //id2の要素数毎に比較
@@ -60,6 +59,9 @@ if(file_exists($idtxt)){
 
         $tmp = "tmp";
         
+        /*
+        提出状況を探索
+        */
         for($j = 1; $j < $row; $j++){
             if($id2[$i] == $id[$j]){
                 $is_submitted = true;
@@ -68,6 +70,8 @@ if(file_exists($idtxt)){
                 break;
             }
         }
+
+        //提出状況をチェック
         if(!$is_submitted){
             $not_submitted[$counter2] = $id2[$i];
             echo "not submitted <br />\n";
