@@ -37,8 +37,16 @@
             $sub[$counter] = explode(",", $line);
 
             //探索して指定されているかチェック
-            for($i = 0 ; $i < 3 ; $i ++){
+            for($i = 0 ; $i < 4 ; $i ++){
                 if($sub[$counter][$i] == ""){
+                    $sub[$counter][$i] = "指定されていません";
+                }else if ($sub[$counter][$i] == null) {
+                    $sub[$counter][$i] = "指定されていません";
+                }else if ($sub[$counter][$i] == PHP_EOL) {
+                    $sub[$counter][$i] = "指定されていません";
+                }else if ($sub[$counter][$i] == "\n") {
+                    $sub[$counter][$i] = "指定されていません";
+                }else if ($sub[$counter][$i] == " ") {
                     $sub[$counter][$i] = "指定されていません";
                 }
             }

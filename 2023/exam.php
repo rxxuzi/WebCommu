@@ -31,15 +31,26 @@
             $line = fgets($fp);
             $sub[$counter] = explode(",", $line);
 
+            $index = count($sub[$counter]);
+            // echo "index is : ".count($sub[$counter])."\n";
             //線形探索
-            for($i = 0 ; $i < 3 ; $i ++){
+            for($i = 0 ; $i < 4 ; $i ++){
                 if($sub[$counter][$i] == ""){
+                    $sub[$counter][$i] = "指定されていません";
+                }else if ($sub[$counter][$i] == null) {
+                    $sub[$counter][$i] = "指定されていません";
+                }else if ($sub[$counter][$i] == PHP_EOL) {
+                    $sub[$counter][$i] = "指定されていません";
+                }else if ($sub[$counter][$i] == "\n") {
+                    $sub[$counter][$i] = "指定されていません";
+                }else if ($sub[$counter][$i] == " ") {
                     $sub[$counter][$i] = "指定されていません";
                 }
             }
+            
             $counter ++;
 
-            echo $sub[$counter-1][0]."\n";
+            // echo $sub[$counter-1][0]."\n";
         }
     }else{
         echo "File not found\n";
