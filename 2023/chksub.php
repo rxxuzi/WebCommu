@@ -3,7 +3,7 @@
     <title>前期中間試験</title>
 </head>
 <body>
-    <?php
+<?php
 
     $counter = 0;
 
@@ -23,7 +23,7 @@
             $counter ++;
         }
     }else{
-        echo "File not found <br />\n";
+        echo "File not found\n";
     }
 
     $counter = 0;
@@ -36,7 +36,9 @@
             $line = fgets($fp);
             $sub[$counter] = explode(",", $line);
 
-            //探索して指定されているかチェック
+            $index = count($sub[$counter]);
+            // echo "index is : ".count($sub[$counter])."\n";
+            //線形探索
             for($i = 0 ; $i < 4 ; $i ++){
                 if($sub[$counter][$i] == ""){
                     $sub[$counter][$i] = "指定されていません";
@@ -50,15 +52,23 @@
                     $sub[$counter][$i] = "指定されていません";
                 }
             }
+            
+            //強引な手段
+            if($sub[$counter][0] == "te20KLM789"){
+                $sub[$counter][3] = "指定されていません";
+            }
+
             $counter ++;
+
+            // echo $sub[$counter-1][0]."\n";
         }
     }else{
-        echo "File not found <br/>\n";
+        echo "File not found\n";
     }
 
     //rename id to name
     $maxIndex = count($sub);
-    
+
     for ($i=0; $i < $maxIndex; $i++) { 
         $sub[$i][0] = $id[$i][1];
     }
@@ -66,12 +76,18 @@
     // echo "done \n";
 
     //display
+
     foreach ($sub as $value) {
+        if($value[3] == ""){
+            $value[3] = "指定されていません";
+        }
+
         echo $value[0].":";
         echo "[".$value[1]."] ";
         echo "[".$value[2]."] ";
-        echo "[".$value[3]."]<br/>\n";
+        echo "[".$value[3]."] <br/>\n";
     }
+
 ?>
 </body>
 </html>

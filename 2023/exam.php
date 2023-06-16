@@ -10,7 +10,7 @@
 
     //ids.txt to $ Array
     if(file_exists($path0)){
-        echo "File found";
+        // echo "File found";
         $fp = fopen($path0, "r");
         while(!feof($fp)){
             $line = fgets($fp);
@@ -25,7 +25,7 @@
 
     //sub.txt to $ Array
     if(file_exists($path1)){
-        echo "File found";
+        // echo "File found";
         $fp = fopen($path1, "r");
         while(!feof($fp)){
             $line = fgets($fp);
@@ -64,7 +64,7 @@
         $sub[$i][0] = $id[$i][1];
     }
 
-    echo "done \n";
+    // echo "done \n";
 
     //display
 
@@ -72,7 +72,7 @@
         echo $value[0].":";
         echo "[".$value[1]."] ";
         echo "[".$value[2]."] ";
-        echo "[".$value[3]."]\n";
+        echo "[".$value[3]."] <br / >\n";
     }
 
 ?>
