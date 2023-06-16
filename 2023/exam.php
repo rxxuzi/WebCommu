@@ -48,6 +48,7 @@
                 }
             }
             
+            
             $counter ++;
 
             // echo $sub[$counter-1][0]."\n";
@@ -74,6 +75,4 @@
         echo "[".$value[3]."]\n";
     }
 
-
-    
 ?>
