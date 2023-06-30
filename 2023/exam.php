@@ -5,6 +5,7 @@
     $path0 = "./ids.txt";
     $path1 = "./subjects.txt";
 
+    
     $id = array();
     $sub = array();
 
@@ -45,6 +46,8 @@
                     $sub[$counter][$i] = "指定されていません";
                 }else if ($sub[$counter][$i] == " ") {
                     $sub[$counter][$i] = "指定されていません";
+                }else if ($sub[$counter][$i] == "\r") {
+                    $sub[$counter][$i] = "指定されていない";
                 }
             }
             
@@ -61,7 +64,7 @@
     $maxIndex = count($sub);
 
     for ($i=0; $i < $maxIndex; $i++) { 
-        $sub[$i][0] = $id[$i][1];
+        $sub[$i][0] = $id[$i][1]; // name
     }
 
     // echo "done \n";
@@ -74,5 +77,7 @@
         echo "[".$value[2]."] ";
         echo "[".$value[3]."] <br / >\n";
     }
+
+    
 
 ?>
