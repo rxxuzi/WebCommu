@@ -8,10 +8,11 @@
 
     mb_language("Japanese");
     mb_internal_encoding("UTF-8");
-    $mail_to = "bigguccisosa3750@gmain.com";//宛先
-    $mail_from = "te20fukuda@g.kumamoto-nct.ac.jp";//送信元
-    if(count($_POST) == 0) {
+    $mail_to = " ";//宛先
+    $mail_from = " ";//送信元
+    if(empty($_POST["sub"]) || empty($_POST["name"]) || empty($_POST["main"])) {
         echo "Please fill in all fields";
+
     }else{
 
 
@@ -29,7 +30,7 @@
             $data[0] = $_POST["sub"];
             $data[1] = $_POST["name"];
             $text    = $_POST["main"];
-            $text    = str_replace("\n", "", $text);
+            $text    = str_replace("\n", "^", $text);
             $data[2] = str_replace(",", " ", $text);
             $data[3] = ($now->format('Y-m-d H:i:s'))."\n";
             //ファイルに追記

@@ -30,6 +30,10 @@
     .time{
         color: steelblue;
     }
+
+    h3{
+        color: rebeccapurple;
+    }
     </style>
 </head>
 <body>
@@ -57,10 +61,17 @@
         // $bodyTxt = explode("^", $body[2]);
         echo "<div>";
         echo "<hr>";
-        echo "<h2>".$body[0]."</h2>";
-        echo "<p>".$body[1]."</p>";
-        echo "<p>".$body[2]."</p>";
-        echo "<p class='time'>".$body[3]."</p>";
+        echo "<h2> Subject : ".$body[0]."</h2>";
+        echo "<h3> User :".$body[1]."</h3>";
+        // echo "<p>".$body[2]."</p>";
+
+        $text = explode("^", $body[2]);
+        echo "<p> Body </p>";
+        foreach($text as $txt){
+            echo "<p>".$txt."</p> \n ";
+        }
+
+        echo "<p class='time'> Time :".$body[3]."</p>";
         echo "</div>";
         
     }
