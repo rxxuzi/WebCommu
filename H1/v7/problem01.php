@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>自習課題1</title>
+        <title>応用課題1</title>
     </head>
     <body>
         <?php 

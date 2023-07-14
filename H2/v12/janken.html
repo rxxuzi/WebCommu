@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Janken</title>
+    <script type="text/javascript" src="janken.js"></script>
+    <script type="text/javascript">
+        var strMsg = "じゃんけんしますか?";
+        function init(){
+            if(!confirm(strMsg)){
+                document.getElementById("btnG").disabled = true;
+                document.getElementById("btnC").disabled = true;
+                document.getElementById("btnP").disabled = true;
+
+            }
+        }
+        function  myChoice(jankenUser){
+            var strLocal = result(jankenUser)
+            alert(strLocal);
+        }
+    </script>
+</head>
+<body onload="init();">
+<form name = "form2">
+    <input type="button" id = "btnG" onclick="myChoice(0);" value="グー">
+    <input type="button" id = "btnC" onclick="myChoice(1)" value="チョキ">
+    <input type="button" id = "btnP" onclick="myChoice(2)" value="パー">
+    <br>
+
+</form>
+
+
+</body>
+</html>
