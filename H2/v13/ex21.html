@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window open</title>
+    <style type="text/css">
+        #divA{
+            background-color: lightblue;
+        }
+        #divB{
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+<form name = "form1">
+    <input type="button" id="btn1"
+           onclick="mywin1 = window.open('http://www.kumamoto-nct.ac.jp/' , 'window1', 'location=0,scrollbars=1');"
+           value="no addres bar">
+
+    <input type="button" id="btn2"
+           onclick="mywin1 = window.open('http://www.kumamoto-nct.ac.jp/' , 'window2', 'toolbar=1,scrollbars=0');"
+           value="no scroll bar">
+    <input type="button" id="btn3"
+           onclick="mywin1 = window.open('http://www.kumamoto-nct.ac.jp/' , 'window3', 'toolbar=0,scrollbars=1');"
+           value="no tool bar">
+    <input type="button" id="btn4"
+           onclick="mywin1 = window.open('http://www.kumamoto-nct.ac.jp/' , 'window4', 'toolbar=1,scrollbars=1,width=400,height=300');"
+           value="400*300">
+    <input type="button" id="btn5"
+           onclick="yourChoice = confirm('OK & NO');
+        document.getElementById('divA').textContent = yourChoice"
+           value="DownLoad">
+    <input type="button" id="btn7" onclick="alert('This is alert');">
+    <br/>
+    <div id="divA" >ここにConfirmの結果を表示</div>
+    <div id="divB" >ここに名前を表示</div>
+</form>
+
+</body>
+</html>
