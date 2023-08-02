@@ -5,31 +5,30 @@
     <title>EX4</title>
 </head>
 <body>
-  <script>
-    let myCounter = 0; // 大域変数 myCounter を定義して 0 で初期化
-    const div = document.getElementsByClassName("counter");
+  <main>
+    <script>
+      let myCounter = 0; // 大域変数 myCounter を定義して 0 で初期化
+      // const div = document.getElementById("counter");
 
-    function incrementCounter() {
-      myCounter++;
-      // myCounter number add c as text
-      const txt = document.createElement("p");
-      txt.innerText = myCounter;
+      function incrementCounter() {
+        myCounter++;
+        // const txt = document.createElement("p");
+        // txt.innerText = myCounter.toString();
+        // div.appendChild(txt);
 
-      div.app
-      alert("現在のカウンターの値は " + myCounter + " です。"); // カウンターの値をダイアログに表示
-    }
+        alert("現在のカウンターの値は " + myCounter + " です。"); // カウンターの値をダイアログに表示
+      }
 
-    // 1から10までの数字を持つボタンをforループで生成
-    for (let i = 1; i <= 10; i++) {
-      const button = document.createElement("button");
-      button.textContent = i;
-      button.onclick = incrementCounter;
-      document.body.appendChild(button);
-    }
-  </script>
+      // 1から10までの数字を持つボタンをforループで生成
+      for (let i = 1; i <= 10; i++) {
+        const button = document.createElement("button");
+        button.textContent = i;
+        button.onclick = incrementCounter;
+        document.body.appendChild(button);
+      }
+    </script>
 
-  <div class="counter">
+  </main>
 
-  </div>
 </body>
 </html>

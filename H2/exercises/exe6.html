@@ -5,16 +5,16 @@
     <title>EX6</title>
 </head>
 <body>
-  <button onclick="showGreetingDialog()">ご挨拶1</button>
+  <button onclick="f()">ご挨拶1</button>
   <script>
-    function showGreetingDialog() {
+    function f() {
       const name = prompt("あなたの名前を入力してください");
 
       if (name !== null && name.trim() !== "") {
         const greeting = name + " さんですね。よろしくお願いします。";
         alert(greeting);
       }else if(name.trim() === ""){
-        showGreetingDialog(); //入力されなかった場合再帰する.
+        f(); //入力されなかった場合再帰する.
       }
     }
   </script>

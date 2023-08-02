@@ -5,10 +5,10 @@
     <title>EX8</title>
 </head>
 <body>
-<button onclick="showGreeting()">ご挨拶2</button>
+<button onclick="f()">ご挨拶2</button>
 
 <script>
-  function showGreeting() {
+  function f() {
     const name = prompt("あなたの名前を入力してください");
 
     if (name !== null && name.trim() !== "") {
@@ -19,7 +19,7 @@
       targetElement.appendChild(greeting);
     }else if(name.trim() === ""){
         alert("正しく入力してください");
-        showGreeting(); //入力されなかった場合再帰する.
+        f(); //入力されなかった場合再帰する.
     }
   }
 </script>
