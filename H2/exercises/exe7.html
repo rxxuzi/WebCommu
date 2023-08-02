@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex7</title>
+</head>
+<body>
+<button onclick="showFirstPrompt()">ピタゴラスの定理</button>
+
+<script>
+  function showFirstPrompt() {
+    const firstNumber = prompt("1つ目の数値（整数）を入力してください");
+
+    if (firstNumber !== null) {
+      const secondNumber = prompt("2つ目の数値（整数）を入力してください");
+
+      if (secondNumber !== null) {
+        calculatePythagoreanTheorem(Number(firstNumber), Number(secondNumber));
+      }
+    }
+  }
+
+  function calculatePythagoreanTheorem(a, b) {
+    const hypotenuse = Math.sqrt(a * a + b * b);
+    alert("直角三角形の斜辺の長さは " + hypotenuse + " です。");
+  }
+</script>
+</body>
+</html>
