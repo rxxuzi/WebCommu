@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EX5</title>
+</head>
+<body>
+<button onclick="ax()">お願い</button>
+
+<script>
+    function ax() {
+        const isConfirmed = confirm("少しお手伝いをしていただけますか？");
+        if (isConfirmed) { // true
+            alert("ありがとうございます！");
+        } else {
+            alert("残念です。");
+        }
+    }
+</script>
+</body>
+</html>
