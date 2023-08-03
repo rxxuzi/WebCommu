@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>q2</title>
+    <style>
+
+        body{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0f0f9;
+            height: 100vh;
+            font-family: "Muli", Arial, sans-serif;
+        }
+
+        .btn{
+            background: #1462ff;
+            color: white;
+            border-radius: 12px;
+            padding: 12px 18px;
+            box-shadow: 0 6px 30px -10px #4a74c9;
+            transition: all 0.5s ease;
+            border: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <script>
+        let counter = 0; // 大域変数 myCounter を定義して 0 で初期化
+
+        function holeCheck(){
+            let n = this.textContent;
+            console.log(n);
+            if(n % 2 === 1){
+                //even
+                alert("落とし穴だ！！");
+                counter = 0;
+
+            }else{
+                //odd
+                counter++;
+
+                alert("safe!!");
+
+                // Disable this button from being pressed.
+                DisableNextButton(n);
+
+                this.style.color = "gray";
+                this.style.background = "gray";
+                this.style.boxShadow = "black";
+
+                if(counter >= 3){
+                    alert("GREAT!!!");
+                }
+
+            }
+        }
+
+        function DisableNextButton(btnId) {
+            document.getElementById(btnId).disabled = 'true';
+        }
+
+        // 1から10までの数字を持つボタンをforループで生成
+        for (let i = 1; i <= 10; i++) {
+            const button = document.createElement("button");
+            button.textContent = i;
+            button.className = "btn";
+            button.id = i;
+            button.onclick = holeCheck; //落とし穴かどうか判定
+            document.body.appendChild(button); // <body>内に追記
+        }
+
+        // const btn = document.getElementsByTagName("button");
+
+
+    </script>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Q4</title>
+    <style>
+
+      body{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        background-color: #e0f0f9;
+        height: 100vh;
+        font-family: "Muli", Arial, sans-serif;
+      }
+
+      .buttons > button{
+        margin-right: 30px;
+      }
+
+      .btn{
+        background: #1462ff;
+        color: white;
+        border-radius: 12px;
+        padding: 12px 18px;
+        box-shadow: 0 6px 30px -10px #4a74c9;
+        transition: all 0.5s ease;
+        border: 0;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .btn:hover{
+        box-shadow: 0 0px 0px 0 rgba(0, 40, 120, 0);
+        transform: scale(0.930);
+      }
+    </style>
+
+</head>
+<body onload="inputUserName()">
+<!--<h1 class="title">落とし穴ゲーム!!</h1>-->
+<div id="main"></div>
+<script>
+
+  const main = document.getElementById('main');
+
+  class UserClass{
+    static size = 10;
+    static maxHoleSize = 5;
+    constructor() {
+      this.randomInteger = Math.floor(Math.random() * UserClass.maxHoleSize) + 1;
+      console.log("Random Integer Is : " + this.randomInteger);
+    }
+
+    /**
+     * ランダムな要素分trueを配列に入れる
+     */
+    generateHoleArray(){
+      for (let i = 0; i < UserClass.size ; i ++ ){
+        if(i < this.randomInteger){
+          this.hole.push(true);
+        }else{
+          this.hole.push(false);
+        }
+      }
+      this.shuffle(this.hole);
+      console.log("This Hole Is [" + this.hole + "]");
+    }
+
+    /**
+     * 配列をシャッフルする関数
+     * @param array シャッフルしたい配列
+     */
+    shuffle(array) { //void
+      for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+    }
+
+    //落とし穴チェック
+    pitfallCheck(n){
+      return this.hole[n];
+    }
+
+    name;
+    randomInteger;
+    hole = [];
+
+  }
+
+  const user = new UserClass();
+
+  function inputUserName() {
+    const name = prompt("あなたの名前を入力してください");
+
+    if (name !== null && name.trim() !== "") {
+      user.name = name;
+      user.generateHoleArray(); //　Hole setting
+      console.log("User : " + name);
+    }else if(name.trim() === ""){
+      alert("正しく入力してください");
+      inputUserName(); //入力されなかった場合再帰する.
+    }
+  }
+
+  let counter = 0; // 大域変数 myCounter を定義して 0 で初期化
+
+  function holeCheck(){
+    let n = this.textContent;
+    console.log("pushed : " + n + " : counter " + counter);
+    //その場所が落とし穴かチェックする
+
+    if(user.pitfallCheck(n - 1)){
+      alert("落とし穴だ！！");
+      counter = 0;
+    }else{
+      counter++;
+      alert("セーフ");
+      // Disable this button from being pressed.
+      /**
+       * @see https://stackoverflow.com/questions/2323948/disabling-the-button-after-once-click
+       */
+      DisableNextButton(n);
+
+      this.style.color = "gray";
+      this.style.background = "gray";
+      this.style.boxShadow = "black";
+
+      if(counter >= 3){
+        alert(user.name + "さん、素晴らしい！");
+        console.log(user.name + " won!");
+      }
+
+    }
+  }
+
+  function DisableNextButton(btnId) {
+    document.getElementById(btnId).disabled = 'true';
+  }
+
+  // Generate buttons with numbers from 1 until 10 in a for loop
+  for (let i = 1; i <= 10; i++) {
+    const button = document.createElement("button");
+
+    button.className = "btn";
+    button.textContent = i;
+    button.id = i;
+    button.onclick = holeCheck; //落とし穴かどうか判定
+    main.appendChild(button); // <body>内に追記
+  }
+
+</script>
+</body>
+</html>

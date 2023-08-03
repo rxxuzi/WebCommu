@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Q1</title>
+    <style>
+        .btn{
+            background: #1462ff;
+            color: white;
+            border-radius: 12px;
+            margin: auto;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            padding: 40px 50px;
+            box-shadow: 0 6px 30px -10px #4a74c9;
+            transition: all 0.5s ease;
+            border: 0;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+  <button class="btn" value="Calc" onclick="setN()">計算</button>
+  <script>
+      function setN(){
+          const n =  prompt("整数値nを入力してください");
+          console.log(n + "type : " + typeof n);
+          if (n !== null && n.trim() !== "") {
+              f(+n);
+          }else if(n.trim() === ""){
+              alert("正しく入力してください");
+              setN(); //入力されなかった場合再帰する.
+          }else{
+              alert("正しく入力してください");
+              setN();
+          }
+      }
+    function f(max){
+      var sum = 0;
+      for (let i = 1; i <= max; i++) {
+        document.write(sum + ' + ' +  i + ' = ' +  add(sum,i) + '<br>');
+        sum += i;
+      }
+    }
+    function add(a , b){
+      return a+b;
+    }
+  </script>
+</body>
+</html>
