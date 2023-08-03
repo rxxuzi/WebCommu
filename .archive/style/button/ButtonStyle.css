@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0f0f9;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: "Muli", Arial, sans-serif;
+}
+
+.buttons > button{
+    margin-right: 30px;
+}
+
+/*class : btn0 */
+
+.btn0{
+    background: #1462ff;
+    color: white;
+    display: flex;
+    justify-content:space-around;
+    border-radius: 12px;
+    padding: 12px 48px;
+    box-shadow: 0 6px 30px -10px #4a74c9;
+    transition: all 0.5s ease;
+    border: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn0:hover{
+    box-shadow: 0 0px 0px 0 rgba(0, 40, 120, 0);
+    transform: scale(0.930);
+}
+
+
