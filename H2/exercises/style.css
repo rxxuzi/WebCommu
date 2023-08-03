@@ -30,6 +30,8 @@ body{
 .btn{
     background: #1462ff;
     color: white;
+    display: flex;
+    justify-content:space-around;
     border-radius: 12px;
     padding: 12px 48px;
     box-shadow: 0 6px 30px -10px #4a74c9;

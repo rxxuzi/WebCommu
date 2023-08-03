@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>EX4</title>
+    <link href="style.css" type="text/css" rel="stylesheet">  <!---css---->
 </head>
 <body>
   <main>
@@ -19,6 +20,7 @@
       for (let i = 1; i <= 10; i++) {
         const button = document.createElement("button");
         button.textContent = i;
+        button.className = "btn";
         button.onclick = incrementCounter;
         document.body.appendChild(button); // <body>内に追記
       }
