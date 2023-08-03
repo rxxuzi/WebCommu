@@ -8,13 +8,9 @@
   <main>
     <script>
       let myCounter = 0; // 大域変数 myCounter を定義して 0 で初期化
-      // const div = document.getElementById("counter");
 
       function incrementCounter() {
         myCounter++;
-        // const txt = document.createElement("p");
-        // txt.innerText = myCounter.toString();
-        // div.appendChild(txt);
 
         alert("現在のカウンターの値は " + myCounter + " です。"); // カウンターの値をダイアログに表示
       }
@@ -24,7 +20,7 @@
         const button = document.createElement("button");
         button.textContent = i;
         button.onclick = incrementCounter;
-        document.body.appendChild(button);
+        document.body.appendChild(button); // <body>内に追記
       }
     </script>
 
