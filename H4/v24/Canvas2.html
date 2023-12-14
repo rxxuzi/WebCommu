@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Draw Polygon, Line and Tex</title>
+    <script>
+        function init(){
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+            //drawing Of triangle
+            ctx.strokeStyle = "red";
+            ctx.lineWidth = 3;
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(100,100);
+            ctx.lineTo(50,200);
+            ctx.lineTo(150,200);
+            ctx.closePath();
+            ctx.stroke();
+            ctx.fillStyle = "yellow";
+            ctx.fill();
+            ctx.lineWidth = 20;
+            ctx.beginPath();
+            ctx.moveTo(350,100);
+            ctx.lineTo(350,200);
+            ctx.moveTo(300,150);
+            ctx.lineTo(400,150);
+            ctx.stroke();
+
+            ctx.fillStyle = "blue";
+            ctx.font = "20px Georgia";
+            ctx.fillText("Hello World!", 10, 50);
+        }
+    </script>
+</head>
+<body onload="init()">
+<canvas id="myCanvas" width="600" height="400" style="background-color: #efefef">
+    Canvas is not supported
+</canvas>
+</body>
+</html>

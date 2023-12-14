@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Draw Rectangle and Circle</title>
+        <script>
+            window.onload = () => {
+                var canvas = document.getElementById("myCanvas");
+                const ctx = canvas.getContext("2d");
+                ctx.fillStyle = "green";
+                ctx.fillRect(300,200,200,100);
+                ctx.fillStyle = "rgba(255,0,0,0.5)";
+                ctx.arc(100,100,50,0,2*Math.PI,false);
+                ctx.fill();
+            }
+        </script>
+
+</head>
+<body>
+    <canvas id="myCanvas" width="600" height="400" style="background-color: #efefef">
+        Canvas is not supported
+    </canvas>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bounging Ball</title>
+    <style>
+        #fps {clear: both}
+        #canvas {clear: both; border: 1px solid #c0c0c0}
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="800" height="600">
+    you need better browser
+</canvas>
+<script type="text/javascript">
+    let context;
+    const w = 800;
+    const h = 600;
+    var x;
+    var y;
+    let dx = 4; let dy = 8;
+    function rn(max){
+        return Math.floor(Math.random() * max + 1);
+    }
+    function sl(){
+        x = rn(w);
+        y = rn(h);
+    }
+    function clear(){
+        context.clearRect(0,0,w,h);
+    }
+    function dc(x,y,r){
+        context.beginPath();
+        context.arc(x,y,r,0,Math.PI * 2 , true);
+        context.fill();
+    }
+    function drw(id){
+        clear();
+        context.fillStyle = "blue";
+        dc(x,y,75);
+        context.fillStyle = "green";
+        dc(x,y,10);
+        if (x + dx > w || x + dx < 0) {
+            dx = -dx;
+        }
+        if (y + dy > h || y + dy < 0) {
+            dy = -dy;
+        }
+        x += dx;
+        y += dy;
+        console.log(c + ",x " + x + " , y " + y);
+        c++;
+    }
+    let c = 0;
+    function init(id){
+        context = document.getElementById(id).getContext("2d");
+        sl();
+        return window.setInterval(drw , 10);
+    }
+    init("canvas")
+</script>
+</body>
+</html>
