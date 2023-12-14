@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>HTML5Form2</title>
+    <style>
+        input:required.valid { border-color: red; border-width: 2px; }
+        input:invalid { background-color: pink; }
+        input:valid { background-color: lightgreen; }
+        </style>
+</head>
+<body>
+    Name :
+    <form>
+        <label>
+            <input type="text" required>
+        </label>
+        <input type="submit">
+    </form>
+    Email :
+    <form>
+        <label>
+            <input type="email">
+        </label>
+        <input type="submit">
+    </form>
+</body>
+</html>
